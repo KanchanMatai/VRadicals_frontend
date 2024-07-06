@@ -13,14 +13,16 @@ import {
   cilSpeedometer,
   cilStar,
   cilUser,
-  cilCheckCircle
+  cilCheckCircle,
+  cilAirplay,
+
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
 
 const _nav = [
   {
     component: CNavItem,
-    name: 'Add Employee',
+    name: 'Add Products',
     to: '/dashboard',
     icon: <CIcon icon={cilUser} customClassName="nav-icon" />,
     badge: {
@@ -198,9 +200,9 @@ const _nav = [
   // },
   {
     component: CNavItem,
-    name: 'Approve employee',
-    to: '/approve-employee',
-    icon: <CIcon icon={cilCheckCircle} customClassName="nav-icon" />,
+    name: 'Display Product',
+    to: '/display-product',
+    icon: <CIcon icon={cilAirplay} customClassName="nav-icon" />,
   },
   // {
   //   component: CNavGroup,
@@ -255,16 +257,16 @@ const _nav = [
   //     },
   //   ],
   // },
-  // {
-  //   component: CNavItem,
-  //   name: 'Widgets',
-  //   to: '/widgets',
-  //   icon: <CIcon icon={cilCalculator} customClassName="nav-icon" />,
-  //   badge: {
-  //     color: 'info',
-  //     text: 'NEW',
-  //   },
-  // },
+  {
+    component: CNavItem,
+    name: 'Edit & Delete Products',
+    to: '/edit-product',
+    icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+    badge: {
+      color: 'info',
+
+    },
+  },
   // {
   //   component: CNavTitle,
   //   name: 'Extras',

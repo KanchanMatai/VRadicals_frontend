@@ -10,7 +10,7 @@ import {
   CSidebarToggler,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import vradicals_icon from "../assets/Icon/vradicals_icon.png"
+import webiators_icon  from "../assets/Icon/webiators_icon.png"
 import { AppSidebarNav } from './AppSidebarNav'
 
 import { logo } from 'src/assets/brand/logo'
@@ -40,8 +40,8 @@ const AppSidebar = () => {
           {/* <CIcon customClassName="sidebar-brand-full" icon={logo} height={32} /> */}
           {/* <img src={vradicals_icon} alt="Vradicals Icon"  height={38}/> */}
           <div style={{ display: 'flex', alignItems: 'center' }}>
-      <img src={vradicals_icon} alt="Vradicals Icon" height={38} />
-      <span style={{ marginLeft: '45px', marginTop:"5px", textDecoration: 'none' }}>VRADICALS</span>
+      <img src={webiators_icon} alt="Vradicals Icon" height={38} />
+      <span style={{ marginLeft: '45px', marginTop:"5px", textDecoration: 'none' }}>WEBIATORS</span>
     
     </div>
           <CIcon customClassName="sidebar-brand-narrow" icon={sygnet} height={32} />

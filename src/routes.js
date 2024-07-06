@@ -48,11 +48,11 @@ const Badges = React.lazy(() => import('./views/notifications/badges/Badges'))
 const Modals = React.lazy(() => import('./views/notifications/modals/Modals'))
 const Toasts = React.lazy(() => import('./views/notifications/toasts/Toasts'))
 
-const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
-
+// const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
+const Widgets = React.lazy(() => import('./views/widgets/Widgets'));
 const routes = [
   { path: '/', exact: true, name: 'Home' },
-  { path: '/dashboard', name: 'Add employee', element: Dashboard },
+  { path: '/dashboard', name: 'Add products', element: Dashboard },
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },
   { path: '/theme/typography', name: 'Typography', element: Typography },
@@ -75,7 +75,7 @@ const routes = [
   { path: '/buttons/buttons', name: 'Buttons', element: Buttons },
   { path: '/buttons/dropdowns', name: 'Dropdowns', element: Dropdowns },
   { path: '/buttons/button-groups', name: 'Button Groups', element: ButtonGroups },
-  { path: '/approve-employee', name: 'Approve employee', element: Charts },
+  { path: '/display-product', name: 'Display Products', element: Charts },
   { path: '/forms', name: 'Forms', element: FormControl, exact: true },
   { path: '/forms/form-control', name: 'Form Control', element: FormControl },
   { path: '/forms/select', name: 'Select', element: Select },
@@ -94,7 +94,8 @@ const routes = [
   { path: '/notifications/badges', name: 'Badges', element: Badges },
   { path: '/notifications/modals', name: 'Modals', element: Modals },
   { path: '/notifications/toasts', name: 'Toasts', element: Toasts },
-  { path: '/widgets', name: 'Widgets', element: Widgets },
+  // { path: '/edits', name: 'Edits', element: Widgets },
+  { path: '/edit-product', name: 'Edit Product', element: Widgets },
 ]
 
 export default routes

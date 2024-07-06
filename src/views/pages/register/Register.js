@@ -19,13 +19,13 @@ import { toast } from 'react-hot-toast';
 const Register = () => {
  
   const [formData, setFormData] = useState({
-    name: '',
+    userName: '',
     age: '',
     email: '',
     mobile: '',
     address: '',
     password: '',
-    role: '', 
+    
   })
 
   const handleChange = (e) => {
@@ -40,7 +40,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch('http://localhost:4000/api/hr/signup', {
+      const response = await fetch('http://localhost:4000/api/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -58,13 +58,13 @@ const Register = () => {
         toast.success('Account created successfully');
       }
       setFormData({
-        name: '',
+        userName: '',
         age: '',
         email: '',
         mobile: '',
         address: '',
         password: '',
-        role: '', 
+
       });
       
     } catch (error) {
@@ -87,10 +87,10 @@ const Register = () => {
                       <CIcon icon={cilUser} />
                     </CInputGroupText>
                     <CFormInput
-                      name="name"
+                      name="userName"
                       placeholder="Username"
                       autoComplete="username"
-                      value={formData.name}
+                      value={formData.userName}
                       onChange={handleChange}
                     />
                   </CInputGroup>
@@ -147,16 +147,7 @@ const Register = () => {
                       onChange={handleChange}
                     />
                   </CInputGroup>
-                  <CInputGroup className="mb-3">
-                    <CInputGroupText>Role</CInputGroupText>
-                    <CFormInput
-                      name="role"
-                      placeholder="Role"
-                      autoComplete="role"
-                      value={formData.role}
-                      onChange={handleChange}
-                    />
-                  </CInputGroup>
+                
                   <div className="d-grid">
                     <CButton type="submit" color="success">Create Account</CButton>
                   </div>

@@ -20,17 +20,17 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('');
+
   const navigate = useNavigate();
  
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/hr/login', {
+      const response = await fetch('http://localhost:4000/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password, role }),
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
@@ -41,7 +41,7 @@ const Login = () => {
         // Clear the form
         setEmail('');
         setPassword('');
-        setRole('');
+       
         // Handle the token as needed, e.g., save it to localStorage
         localStorage.setItem('token', data.token);
         sessionStorage.setItem('token',data.token);
@@ -92,17 +92,7 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                       />
                     </CInputGroup>
-                    {/* <CInputGroup className="mb-3">
-                      <CInputGroupText>
-                        <CIcon icon={cilUser} />
-                      </CInputGroupText>
-                      <CFormInput
-                        placeholder="Role"
-                        autoComplete="username"
-                        value={role}
-                        onChange={(e) => setRole(e.target.value)}
-                      />
-                    </CInputGroup> */}
+               
                     <CRow>
                       <CCol xs={12}  className="d-flex justify-content-center">
                         <CButton color="primary" className="px-4 mt-3" onClick={handleLogin}>
@@ -110,11 +100,7 @@ const Login = () => {
                         </CButton>
                         
                       </CCol>
-                      {/* <CCol xs={6} className="text-right">
-                        <CButton color="link" className="px-0">
-                          Forgot password?
-                        </CButton>
-                      </CCol> */}
+                  
                     </CRow>
                   </CForm>
                 </CCardBody>
@@ -123,7 +109,7 @@ const Login = () => {
                 <CCardBody className="text-center">
                   <div>
                     <h2>Sign up</h2>
-                    <p className="mt-5">Sign up as an Admin/HR</p>
+                    <p className="mt-5">Sign up as an user</p>
                     <Link to="/register">
                       <CButton color="primary" className="mt-5" active tabIndex={-1}>
                         Register Now!
